@@ -19,8 +19,13 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-}
+  let tempArray = [];
+  tempArray[0] = '<li>name: ' + obj.name + '</li>';
+  tempArray[1] = `<li>age: ${obj.age}</li>`;
+
+  if (obj.name === undefined || obj.age === undefined) tempArray = [];
+
+  return tempArray;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,9 +38,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
-};
+  const count = (target, input) => {
+    let count = 0;
+    input.forEach((elementOuter) => {
+      elementOuter.forEach((elementInner) => elementInner === target ? count++ : null);
+    });
 
+    return count;
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -47,7 +57,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let sum = 0;
+
+  input.forEach((elementOuter) => {
+    elementOuter.forEach((elementInner) => sum += elementInner);
+  });
+
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,8 +79,20 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+  const divisibleByFiveTwoToThePower = (input) => {
+    let tempArray = input;
+    let tempArray2 = [];
+
+    tempArray = input.map((elementOuter) => {
+      tempArray2 = elementOuter.filter((elementInner) => typeof (elementInner) === 'number');
+      tempArray2 = tempArray2.filter((elementInner) => elementInner % 5 === 0);
+      tempArray2 = tempArray2.map((elementInner) => {
+        return Math.pow(2, elementInner);
+      });
+      return tempArray2;
+    });
+
+    return tempArray;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -129,8 +157,19 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+  let findMaleAndFemale = (data) => {
+    let tempArray = [];
+    let string = '';
+    data.forEach((element) => {
+      if (element.gender === 'male' || element.gender === 'female') tempArray.push(element.name);
+    });
+
+    string = tempArray.join(' and ');
+
+    return string;
+  };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,9 +178,18 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
-};
+  let shorty;
+  let height = 99999999999;
 
+  data.forEach((element) => {
+    if (+element.height < height) {
+      height = element.height;
+      shorty = element.name;
+    }
+  });
+
+  return shorty;
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
