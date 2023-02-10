@@ -108,15 +108,15 @@ let starWarsData = [{
   gender: 'n/a'
 }];
 
+
 let biggerThanLuke = (arr) => {
-  let biggerThanLuke = (arr) => {
-    if (arr.length === 0) return '';
-    let LukeWeight = arr[0].mass;
-    let tempArray = arr.filter((element) => +element.mass > +LukeWeight);
-    tempArray = tempArray.map((element) => element.name);
-    let string = tempArray.join(' - ');
-    return string;
-  };
+  if (arr.length === 0) return '';
+  let LukeWeight = arr[0].mass;
+  let tempArray = arr.filter((element) => +element.mass > +LukeWeight);
+  tempArray = tempArray.map((element) => element.name);
+  let string = tempArray.join(' - ');
+  return string;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -132,8 +132,8 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  const sortBy = (property, arr) => arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
+
+const sortBy = (property, arr) => arr.sort((a, b) => a[property] > b[property] ? 1 : -1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -175,7 +175,7 @@ const detectTicTacToeWin = (board) => {
   let results = false;
   let rowResults = true;
   //argh sigh
-
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

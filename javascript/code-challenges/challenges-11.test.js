@@ -18,7 +18,7 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
+function transformToLis(obj) {
   let tempArray = [];
   tempArray[0] = '<li>name: ' + obj.name + '</li>';
   tempArray[1] = `<li>age: ${obj.age}</li>`;
@@ -26,7 +26,7 @@ function transformToLis(obj){
   if (obj.name === undefined || obj.age === undefined) tempArray = [];
 
   return tempArray;
-
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -38,14 +38,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  const count = (target, input) => {
-    let count = 0;
-    input.forEach((elementOuter) => {
-      elementOuter.forEach((elementInner) => elementInner === target ? count++ : null);
-    });
+  let count = 0;
+  input.forEach((elementOuter) => {
+    elementOuter.forEach((elementInner) => elementInner === target ? count++ : null);
+  });
 
-    return count;
-  };
+  return count;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -78,22 +77,23 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
+
 const divisibleByFiveTwoToThePower = (input) => {
-  const divisibleByFiveTwoToThePower = (input) => {
-    let tempArray = input;
-    let tempArray2 = [];
+  let tempArray = input;
+  let tempArray2 = [];
 
-    tempArray = input.map((elementOuter) => {
-      tempArray2 = elementOuter.filter((elementInner) => typeof (elementInner) === 'number');
-      tempArray2 = tempArray2.filter((elementInner) => elementInner % 5 === 0);
-      tempArray2 = tempArray2.map((elementInner) => {
-        return Math.pow(2, elementInner);
-      });
-      return tempArray2;
+  tempArray = input.map((elementOuter) => {
+    tempArray2 = elementOuter.filter((elementInner) => typeof (elementInner) === 'number');
+    tempArray2 = tempArray2.filter((elementInner) => elementInner % 5 === 0);
+    tempArray2 = tempArray2.map((elementInner) => {
+      return Math.pow(2, elementInner);
     });
+    return tempArray2;
+  });
 
-    return tempArray;
 
+  return tempArray;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -156,18 +156,18 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+
 let findMaleAndFemale = (data) => {
-  let findMaleAndFemale = (data) => {
-    let tempArray = [];
-    let string = '';
-    data.forEach((element) => {
-      if (element.gender === 'male' || element.gender === 'female') tempArray.push(element.name);
-    });
+  let tempArray = [];
+  let string = '';
+  data.forEach((element) => {
+    if (element.gender === 'male' || element.gender === 'female') tempArray.push(element.name);
+  });
 
-    string = tempArray.join(' and ');
+  string = tempArray.join(' and ');
 
-    return string;
-  };
+  return string;
+};
 
 
 
@@ -203,8 +203,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
