@@ -29,7 +29,6 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 const containsAnd = (arr) => {
   const containsAnd = (arr) => arr.filter((element) => element.includes('and'));
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -52,7 +51,6 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   const notInFirstArray = (forbiddenValues, arr) => arr.filter((element) => !(forbiddenValues.includes(element)));
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal

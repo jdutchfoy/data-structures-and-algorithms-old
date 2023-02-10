@@ -7,7 +7,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  /let regex = /0/g;
+  let regex = /0/g;
   return string.replace(regex, 'zero');
 };
 
@@ -108,7 +108,7 @@ const findTagNames = elements => {
   let regex = /(?<=<)\/.*?(?=>)/g;
 
   return string.match(regex);
-
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

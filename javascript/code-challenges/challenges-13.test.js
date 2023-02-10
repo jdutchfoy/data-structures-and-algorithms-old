@@ -25,9 +25,7 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  const firstLetters = (arr) => arr.map((element) => element.charAt(0));
-
+const firstLetters = (arr) => arr.map((element) => element.charAt(0));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -37,8 +35,7 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  const findHappiness = (arr) => arr.filter((element) => element.includes(':)'));
+const findHappiness = (arr) => arr.filter((element) => element.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,8 +45,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  const standardizePhoneNumbers = (arr) => arr.map((element) => (element.slice(1, 4) + element.slice(6, 9) + element.slice(10, 14)));
+const standardizePhoneNumbers = (arr) => arr.map((element) => (element.slice(1, 4) + element.slice(6, 9) + element.slice(10, 14)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -171,7 +167,7 @@ describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
     const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3 = ['Ginger']
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
