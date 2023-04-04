@@ -35,3 +35,4 @@ def BinarySearch(arr, key):
             left = mid + 1
 
     return -1
+![alt text](http://url/to/img.png)
