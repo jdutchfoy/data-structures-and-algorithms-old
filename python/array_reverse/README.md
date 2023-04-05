@@ -4,13 +4,11 @@
 <!-- Description of the challenge -->
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
-
+[Array_Reversed](Figjam Code Challenge 1.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
 
 - [ ] Top-level README “Table of Contents” is updated
  - [ ] README for this challenge is complete
