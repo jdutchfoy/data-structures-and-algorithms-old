@@ -1,0 +1,38 @@
+# README.md
+
+## Array Binary Search
+
+<!-- Description of the challenge -->
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the value of the search key, or -1 if the element is not in the array.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The function BinarySearch takes in two parameters: arr is the sorted array, and key is the value that we want to find.
+We initialize left and right variables to keep track of the boundaries of the search range. We start with left as 0 and right as the index of the last element in the array.
+We enter a while loop that continues until left becomes greater than right. This means that we have searched the entire array without finding the element.
+Inside the loop, we calculate the midpoint index using integer division.
+We compare the value at the midpoint index with the search key. If they are equal, we have found the element, so we return the index.
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+def BinarySearch(arr, key):
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] > key:
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    return -1
+![alt text](http://url/to/img.png)
