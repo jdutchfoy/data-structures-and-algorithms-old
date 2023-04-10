@@ -1,12 +1,16 @@
 def BinarySearch(sorted_array, search_key):
 
+ def BinarySearch(arr, key):
+    left, right = 0, len(arr) - 1
 
-start = 0
-end = lenalist)
-while start < end:
-mid=start + end)//2
-if alist[mid] > key:
-and = Mid
-elif alist[mid] < key:
-start=mid + 1
-else: return mid return -1
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] > key:
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    return -1
